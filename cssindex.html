@@ -7,6 +7,7 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  position: relative;
 } 
 h1{
     text-align: center;
@@ -62,7 +63,7 @@ h1{
     width: 500px;height: 200px;
 }
 #Gazcon {
-    width: 150px;height: 250px;
+    width: 150px;height: 250px; 
 }
 #Gazcon2 {
     float: right;
@@ -70,6 +71,15 @@ h1{
 }
 #Gauchogil {
     float: left;
+}
+.footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
 }
 </style>
 </head>
@@ -115,5 +125,6 @@ h1{
     <img id="Mate2" src="mateyacbeado.jpg" alt="No existe foto" style="margin-left: 40px;">
     <p id="p2" style="margin-left: 40px;"><i>Esto es un mate recien cebado.</i></p>
 </div>
+<div class="footer">Aca tenes el footer, STEVE.</div>
 </body>
 </html>
