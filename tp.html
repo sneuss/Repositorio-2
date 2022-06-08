@@ -8,6 +8,7 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   position: relative;
+  background-color: white;
 } 
 h1{
     text-align: center;
@@ -48,38 +49,46 @@ h1{
   color: white;
 }
 #Mate1 { 
-    width: 600px;height: 320px;
+    width: 300px;height: 200px;
 }
 #Gauchitogil{
-    width: 150px;height: 250px;
+    width: 120px;height: 155px;
 }
 #Columna-Izq1 { 
-    width: 50%; float: left;
-}
+    width: 33%; float: left;
+    position: relative;
+ }
 #Columna-Der {
-    width: 50%; float: right;
+    width: 33%; float: left;
+    position: relative;
+}
+#BloqueCD{
+    width: 33%; float: right;
+    text-align: center;
+    position: relative;
 }
 #Mate2 {
-    width: 500px;height: 200px;
+    width: 300px;height: 200px;
 }
 #Gazcon {
-    width: 150px;height: 250px; 
-}
-#Gazcon2 {
-    float: right;
-    margin-right: 250px;
+    width: 120px;height: 155px; 
+
 }
 #Gauchogil {
     float: left;
 }
+.textocontador{
+  display: inline-block;
+}
 .footer {
-  position: fixed;
+  position:fixed;
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 1rem;
+  padding: 0rem;
   background-color: #efefef;
   text-align: center;
+
 }
 </style>
 </head>
@@ -90,8 +99,8 @@ h1{
 <div class="topnav">
   <a class="active" href="www.google.com">Home</a>
   <a href="campus.itba.edu.ar">Campus ITBA</a>
-  <a href="cssindex.html">Pasos para cebar un mate</a>
-  <a href="github.com">Github</a>
+  <a href="tp.html">Pasos para cebar un mate</a>
+  <a href="www.github.com">Github</a>
 </div>
 <br>
 <div id="Columna-Izq1">
@@ -104,10 +113,8 @@ h1{
           <li>El Gauchito Gil</li>
           <img id="Gauchitogil" src="GAUCHITO-GIL.jpg" alt="No es posible cargar la foto.">
           </div>
-          <div id="Gazcon2">
           <li>Gazcon</li>
           <img id="Gazcon" src="gazcon.PNG" alt="No es posible cargar a Gazcon.">
-        </div>
   </div>
 </div>
 </div>
@@ -125,6 +132,61 @@ h1{
     <img id="Mate2" src="mateyacbeado.jpg" alt="No existe foto" style="margin-left: 40px;">
     <p id="p2" style="margin-left: 40px;"><i>Esto es un mate recien cebado.</i></p>
 </div>
-<div class="footer">Aca tenes el footer, STEVE.</div>
+<div id="BloqueCD">
+
+  <button onclick="BotonCD()">Countdown para el dia del mate</button>
+
+  <script>
+    function BotonCD() {
+  var x = document.getElementById("countdown");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+  </script>
+  <div id="countdown">
+    <p class="textocontador" id="dias"></p>
+    <p class="textocontador" id="horas"></p>
+    <p class="textocontador" id="mins"></p>
+    <p class="textocontador" id="secs"></p>
+    <h2 class="textocontador" id="fin"></h2>
+    <script>
+    
+    var countDownDate = new Date("Nov 30, 2022 00:00:00").getTime();
+
+    var myfunc = setInterval(function() {
+
+    var now = new Date().getTime();
+    var timeleft = countDownDate - now;
+        
+    
+    var dias = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+    var horas = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutos = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+    var segundos = Math.floor((timeleft % (1000 * 60)) / 1000);
+        
+    
+    document.getElementById("dias").innerHTML = dias + "d "
+    document.getElementById("horas").innerHTML = horas + "h " 
+    document.getElementById("mins").innerHTML = minutos + "m " 
+    document.getElementById("secs").innerHTML = segundos + "s " 
+        
+    
+    if (timeleft < 0) {
+        clearInterval(myfunc);
+        document.getElementById("dias").innerHTML = ""
+        document.getElementById("horas").innerHTML = "" 
+        document.getElementById("mins").innerHTML = ""
+        document.getElementById("secs").innerHTML = ""
+        document.getElementById("fin").innerHTML = "Feliz Dia del Mate";
+    }
+    }, 1000);
+    </script>
+  </div>
+</div>
+<br>
 </body>
+<div class="footer">Aca tenes el footer, STEVE.</div>
 </html>
