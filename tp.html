@@ -1,108 +1,123 @@
+
+<!-- Especificaciones de archivo -->
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Como Cebar un Mate</title>
+
+<!-- Aca comienza el codigo CSS -->
+
 <style>
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  position: relative;
-  background-color: white;
+body{
+margin: 0;
+font-family: Arial, Helvetica, sans-serif;
+position: relative;
+background-color: white;
 } 
 h1{
-    text-align: center;
-    margin-top: 0%;
-    margin-bottom: 0%;  
-    color: white;
-    background: #333;
+text-align: center;
+font-family: Arial, Helvetica, sans-serif;
+margin-top: 0%;
+margin-bottom: 0%;  
+color: white;
+background: #333;
 }
 #p1{
-    text-align: center;
-    background-color: #333;
-    color: white;
-    margin-top: 0%;
-    margin-bottom: 0%;
+text-align: center;
+font-family: Arial, Helvetica, sans-serif;
+background-color: #333;
+color: white;
+margin-top: 0%;
+margin-bottom: 0%;
 }
-
-.topnav {
-  overflow: hidden;
-  background-color: #333;
+.topnav{
+overflow: hidden;
+font-family: Arial, Helvetica, sans-serif;
+background-color: #333;
 }
-
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
+.topnav a{
+float: left;
+color: #f2f2f2;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+font-size: 17px;
+font-family: Arial, Helvetica, sans-serif;
 }
-
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
+.topnav a:hover{
+background-color: #ddd;
+color: black;
 }
-
-.topnav a.active {
-  background-color: #04AA6D;
-  color: white;
+.topnav a.active{
+background-color: #04AA6D;
+color: white;
 }
-#Mate1 { 
-    width: 300px;height: 200px;
+#Mate1{ 
+width: 300px;height: 200px;
 }
 #Gauchitogil{
-    width: 120px;height: 155px;
+width: 120px;height: 155px;
 }
-#Columna-Izq1 { 
-    width: 33%; float: left;
-    position: relative;
- }
-#Columna-Der {
-    width: 33%; float: left;
-    position: relative;
+#Columna-Izq1{ 
+width: 33%; float: left;
+position: relative;
+}
+#Columna-Der{
+width: 33%; float: left;
+position: relative;
 }
 #BloqueCD{
-    width: 33%; float: right;
-    text-align: center;
-    position: relative;
+width: 33%; float: right;
+text-align: center;
+position: relative;
 }
-#Mate2 {
-    width: 300px;height: 200px;
+#Mate2{
+width: 300px;height: 200px;
 }
-#Gazcon {
-    width: 120px;height: 155px; 
-
+#Gazcon{
+width: 120px;height: 155px; 
 }
-#Gauchogil {
-    float: left;
+#Gauchogil{
+float: left;
+}
+#matecountdown{
+width: 300px;height: 200px;
 }
 .textocontador{
-  display: inline-block;
+display: inline-block;
 }
-.footer {
-  position:fixed;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 0rem;
-  background-color: #efefef;
-  text-align: center;
+.footer{
+position:fixed;
+right: 0;
+bottom: 0;
+left: 0;
+padding: 0rem;
+background-color: #efefef;
+text-align: center;
+}</style>
 
-}
-</style>
+<!-- Aca termina el codigo CSS -->
+
+<!-- Aca comienza el codigo HTML -->
+
 </head>
 <h1>Como cebar un <b>BUEN</b> mate?</h1>
 <p id="p1">Si, un <i>buen</i> mate.</p>
 <body>
 
+<!-- Barra de navegacion -->
+
 <div class="topnav">
-  <a class="active" href="www.google.com">Home</a>
-  <a href="campus.itba.edu.ar">Campus ITBA</a>
-  <a href="tp.html">Pasos para cebar un mate</a>
-  <a href="www.github.com">Github</a>
+  <a class="active" href="https://pw62083.vercel.app/">Home</a>
+  <a href="https://campus.itba.edu.ar">Campus ITBA</a>
+  <a href="https://www.youtube.com/watch?v=0QMZvUnpr5Q">Youtube como cebar mate</a>
+  <a href="https://www.github.com">Github</a>
 </div>
-<br>
+
+<br>     <!-- Divs para separar en columnas la pagina -->
+
 <div id="Columna-Izq1">
 <div style="padding-left:16px">
   <img id="Mate1" src="Matecebado.jpg" alt="No es posible cargar la foto.">
@@ -132,6 +147,9 @@ h1{
     <img id="Mate2" src="mateyacbeado.jpg" alt="No existe foto" style="margin-left: 40px;">
     <p id="p2" style="margin-left: 40px;"><i>Esto es un mate recien cebado.</i></p>
 </div>
+
+<!-- Aqui inserto un botton linkeado a la funcion "BotonCD()" para hacer aparecer el div onclick -->
+
 <div id="BloqueCD">
 
   <button onclick="BotonCD()">Countdown para el dia del mate</button>
@@ -146,7 +164,10 @@ h1{
   }
 }
   </script>
-  <div id="countdown">
+
+  <!-- En el siguiente div se encuentra dentro del tag script todo el codigo JS formando un countdown hacia el dia nacional del mate. -->
+
+  <div id="countdown" style="display: none">
     <p class="textocontador" id="dias"></p>
     <p class="textocontador" id="horas"></p>
     <p class="textocontador" id="mins"></p>
@@ -154,7 +175,7 @@ h1{
     <h2 class="textocontador" id="fin"></h2>
     <script>
     
-    var countDownDate = new Date("Nov 30, 2022 00:00:00").getTime();
+    var countDownDate = new Date("Nov 30, 2022 00:00:01").getTime();
 
     var myfunc = setInterval(function() {
 
@@ -184,9 +205,14 @@ h1{
     }
     }, 1000);
     </script>
+
+    <img id="matecountdown" src="diamatienzo.jpg" alt="No se pudo cargar foto">
   </div>
 </div>
 <br>
 </body>
-<div class="footer">Aca tenes el footer, STEVE.</div>
+
+<!-- Por ultimo se encuentra el footer -->
+
+<div class="footer">No olvidemos, siempre tomar mate :)</div>
 </html>
